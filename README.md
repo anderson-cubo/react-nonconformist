@@ -19,10 +19,12 @@ const TextInput = createInput({})
 const Register = function () {
   const [state, setState] = useState({})
 
+  const set = values => setState({ ...state, values })
+
   return (
     <Form
       values={state}
-      onChange={setState}
+      onChange={set}
       onSubmit={() => alert('Submited')}
     >
       {(connect, submit, isValid) => (
@@ -49,10 +51,12 @@ import Form from 'react-nonconformist'
 const App = function () {
   const [state, setState] = useState({})
 
+  const set = values => setState({ ...state, values })
+
   return (
     <Form
       values={state}
-      onChange={setState}
+      onChange={set}
       onSubmit={() => alert('Submited')}
     >
       {(connect, submit) => (
@@ -74,10 +78,12 @@ const TextInput = createInput({})
 const App = function () {
   const [state, setState] = useState({})
 
+  const set = values => setState({ ...state, values })
+
   return (
     <Form
       values={state}
-      onChange={setState}
+      onChange={set}
       onSubmit={() => alert('Submited')}
     >
       {(connect, submit) => (
@@ -101,10 +107,12 @@ const TextInput = createInput({})
 const App = function () {
   const [state, setState] = useState({})
 
+  const set = values => setState({ ...state, values })
+
   return (
     <Form
       values={state}
-      onChange={setState}
+      onChange={set}
       onSubmit={() => alert('Submited')}
     >
       {(connect, submit, isValid) => (
