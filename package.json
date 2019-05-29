@@ -12,7 +12,7 @@
     "prepublish": "npm run clean && npm run build",
     "build": "rollup -c"
   },
-  "keywords": [],
+  "keywords": ["form", "forms", "react", "react-native", "validation"],
   "author": "Anderson Ribeiro <anderson@tresna.co>",
   "license": "MIT",
   "repository": "https://github.com/anderson-cubo/react-nonconformist",
