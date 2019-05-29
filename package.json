@@ -1,0 +1,39 @@
+{
+  "name": "react-nonconformist",
+  "version": "0.0.1",
+  "description": "Dealing with form and validation should be easy in any platform.",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "Anderson Ribeiro <anderson@tresna.co>",
+  "license": "MIT",
+  "repository": "https://github.com/anderson-cubo/react-nonconformist",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "react-dom": "16.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0"
+  }
+}
