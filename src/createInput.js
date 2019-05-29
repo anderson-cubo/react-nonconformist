@@ -108,7 +108,7 @@ const createInput = (data = {}) => {
     }
 
     render () {
-      const { error, ...restProps } = handleProps(this.props)
+      const { error, setConnection, ...restProps } = handleProps(this.props)
 
       const { canDisplayError } = this.state
 

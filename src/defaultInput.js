@@ -9,6 +9,14 @@ export default class InputComponent extends Component {
     onChangeText && onChangeText(e.target.value)
   }
 
+  _submit = e => {
+    const { onSubmitEditing } = this.props
+
+    if (e.which === 13 && onSubmitEditing) {
+        onSubmitEditing()
+    }
+  }
+
   render () {
     const {
       label,
@@ -17,6 +25,7 @@ export default class InputComponent extends Component {
       error,
       onBlur,
       onFocus,
+      onSubmitEditing,
       ...restParams
     } = this.props
 
