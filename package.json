@@ -8,6 +8,8 @@
     "./dist"
   ],
   "scripts": {
+    "clean": "rm -rf dist",
+    "prepublish": "npm run clean && npm run build",
     "build": "rollup -c"
   },
   "keywords": [],

@@ -1,6 +1,12 @@
-export default class InputEmailComponent extends Component {
+import React, { Component } from 'react'
+export default class InputComponent extends Component {
   focus = () => {
     this._refInput && this._refInput.focus()
+  }
+
+  _onChangeText = e => {
+    const { onChangeText } = this.props
+    onChangeText && onChangeText(e.target.value)
   }
 
   render () {
@@ -20,7 +26,7 @@ export default class InputEmailComponent extends Component {
         <input
           ref={ref => (this._refInput = ref)}
           value={value}
-          onChangeText={onChangeText}
+          onChange={this._onChangeText}
           onBlur={onBlur}
           onFocus={onFocus}
           {...restParams}
