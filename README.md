@@ -41,7 +41,7 @@ const Register = function () {
 ```
 
 ## Understanding <Form>
-`<Form>` is a container that understands and validate form through an `createInput` input.
+`<Form>` is a container that understands and validate form through a `createInput` input.
 
 ### Creating a simple form
 ```js
