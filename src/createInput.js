@@ -36,6 +36,12 @@ const createInput = (data = {}) => {
        * input with Form
       */
       setConnection: PropTypes.func,
+
+      /**
+       * If Component unmount call disconnect
+      */
+      disconnect: PropTypes.func,
+
       /**
        * If you need to inform a user from some
        * error you need to pass the error message
@@ -105,6 +111,12 @@ const createInput = (data = {}) => {
       ) {
         this.setCanDisplayError()
       }
+    }
+
+    componentWillUnmount () {
+      const { disconnect } = this.props
+
+      if (disconnect) disconnect()
     }
 
     render () {

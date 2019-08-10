@@ -42,6 +42,8 @@ export default class Form extends Component {
     return {
       setConnection: ref => this.setRef(name, ref),
 
+      disconnect: () => this.disconnect(name),
+
       get value () {
         return get(that.props, ['values', name]) || ''
       },
@@ -92,6 +94,10 @@ export default class Form extends Component {
 
   setRef = (name, ref) => {
     this._refs[name] = ref
+  }
+
+  disconnect = (name) => {
+    if (this._refs[name]) delete this._refs[name]
   }
 
   _getVauesFromProps = key => {
