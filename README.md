@@ -107,7 +107,7 @@ const TextInput = createInput({})
 const App = function () {
   const [state, setState] = useState({})
 
-  const set = values => setState({ ...state, values })
+  const set = values => setState({ ...state, ...values })
 
   return (
     <Form
