@@ -50,7 +50,7 @@ export default class Form extends Component {
       disconnect: () => this.disconnect(name),
 
       get value () {
-        if (that.handleGetValue) {
+        if (that.props.handleGetValue) {
           return that.props.handleGetValue(name, that.props.values)
         }
         return get(that.props, ['values', name]) || ''
