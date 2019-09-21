@@ -51,7 +51,7 @@ export default class Form extends Component {
 
       get value () {
         if (that.handleGetValue) {
-          return that.handleGetValue(name, that.props)
+          return that.props.handleGetValue(name, that.props.values)
         }
         return get(that.props, ['values', name]) || ''
       },
