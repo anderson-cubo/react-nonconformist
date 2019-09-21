@@ -29,6 +29,11 @@ export default class Form extends Component {
      * isValid is a boolean to check if this form is valid or not.
     */
     children: PropTypes.func.isRequired,
+    /**
+     * When you have to get the value of an object with a different
+     * structure.
+    */
+    handleGetValue: PropTypes.func
   }
 
   state = {
@@ -45,6 +50,9 @@ export default class Form extends Component {
       disconnect: () => this.disconnect(name),
 
       get value () {
+        if (that.handleGetValue) {
+          return that.handleGetValue(name, that.props)
+        }
         return get(that.props, ['values', name]) || ''
       },
 
