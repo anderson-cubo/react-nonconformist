@@ -37,7 +37,8 @@ export default class Form extends Component {
   }
 
   state = {
-    valid: false
+    valid: false,
+    invalidFields: []
   }
 
   _refs = {}
@@ -90,6 +91,8 @@ export default class Form extends Component {
         issuesWith.push(key)
       }
     }
+
+    this.setState({ invalidFields: issuesWith })
     return issuesWith
   }
 
@@ -99,6 +102,8 @@ export default class Form extends Component {
       onSubmit && onSubmit()
     }
   }
+
+  getInvalidFields = () => this.state.invalidFields
 
   setRef = (name, ref) => {
     this._refs[name] = ref

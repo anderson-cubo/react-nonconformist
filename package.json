@@ -1,6 +1,6 @@
 {
   "name": "react-nonconformist",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Dealing with form and validation should be easy in any platform.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

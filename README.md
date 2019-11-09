@@ -165,3 +165,28 @@ const App = function () {
   )
 }
 ```
+
+### Checking Invalid Inputs
+If you need to check which inputs are invalid use this function `getInvalidFields`
+
+```js
+import React, { useRef } from 'react'
+
+function App () {
+  const formRef = useRef(null)
+
+  return (
+    <Form
+      ref={formRef}
+    >
+      {() => (
+        <pre>
+          {formRef && formRef.current && JSON.stringify(
+            formRef.current.getInvalidFields()
+          )}
+        </pre>
+      )}
+    </Form>
+  )
+}
+```
