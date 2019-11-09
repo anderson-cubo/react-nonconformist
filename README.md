@@ -182,7 +182,7 @@ function App () {
       {() => (
         <pre>
           {formRef && formRef.current && JSON.stringify(
-            formRef.current.getInvalidFields()
+            formRef.current.state.invalidFields
           )}
         </pre>
       )}

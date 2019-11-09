@@ -39,6 +39,8 @@ export default class Form extends Component {
 
   state = {
     valid: false,
+    isDirty: false,
+    isSubmitted: false,
     invalidFields: []
   }
 
@@ -73,6 +75,7 @@ export default class Form extends Component {
 
   _onChange = (name, value) => {
     const { onChange } = this.props
+    if (this.state.isDirty === false) this.setState({ isDirty: true })
     onChange && onChange({ [name]: value })
   }
 
@@ -88,7 +91,10 @@ export default class Form extends Component {
       const ref = this._refs[key]
       if (ref && ref.isValid) {
         if (ref.isValid()) continue
-        if (isFunction(ref.setDirty) && forceDirty) ref.setDirty()
+        if (isFunction(ref.setDirty) && forceDirty) {
+          this.setState({ isDirty: true })
+          ref.setDirty()
+        }
         issuesWith.push(key)
       }
     }
@@ -104,12 +110,11 @@ export default class Form extends Component {
 
   submit = () => {
     const { onSubmit } = this.props
+    this.setState({ isSubmitted: true })
     if (isEmpty(this._validateFields())) {
       onSubmit && onSubmit()
     }
   }
-
-  getInvalidFields = () => this.state.invalidFields
 
   setRef = (name, ref) => {
     this._refs[name] = ref
