@@ -1,6 +1,6 @@
 {
   "name": "react-nonconformist",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Dealing with form and validation should be easy in any platform.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -24,8 +24,8 @@
   "repository": "https://github.com/anderson-cubo/react-nonconformist",
   "dependencies": {
     "lodash": "^4.17.15",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "peerDependencies": {
     "react": "16.x",

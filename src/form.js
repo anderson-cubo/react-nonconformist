@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import isEmpty from 'lodash/isEmpty'
 import isFunction from 'lodash/isFunction'
+import xor from 'lodash/xor'
 
 /**
  * Understand context and inputs and check if
@@ -92,7 +93,12 @@ export default class Form extends Component {
       }
     }
 
-    this.setState({ invalidFields: issuesWith })
+    setTimeout(() => {
+      if (xor(this.state.invalidFields, issuesWith).length > 0) {
+        this.setState({ invalidFields: issuesWith })
+      }
+    })
+
     return issuesWith
   }
 
