@@ -46,6 +46,8 @@ export default class Form extends Component {
 
   _refs = {}
 
+  formState = () => this.state
+
   connect = name => {
     const that = this
     return {
